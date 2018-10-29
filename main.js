@@ -1,10 +1,10 @@
 console.log('hi');
 
 const cemetaryBuilder = (data) => {
-    let domString =`<h3>${data[0].cemetery_name}</h3>
-    <h3>${data[0].number}</h3>
-    <h3>${data[0].mapped_location_address}</h3>
-    <h3>${data[0].additional_location_information}</h3>
+    let domString =`<h3>Cemetary Name: ${data[0].cemetery_name}</h3>
+    <h3>Street Number : ${data[0].number}</h3>
+    <h3>Street Name: ${data[0].mapped_location_address}</h3>
+    <h3>County: ${data[0].additional_location_information}</h3>
     `
     $("#main").html(domString);
 };
@@ -31,7 +31,6 @@ const newPromise = () => {
 
 const initialApiView = () => {
     newPromise().then(data => {
-    console.log(data)
     cemetaryBuilder(data)
     ultraBuild(data);
     })
