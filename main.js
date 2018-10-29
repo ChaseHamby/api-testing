@@ -9,6 +9,14 @@ const cemetaryBuilder = (data) => {
     $("#main").html(domString);
 };
 
+const ultraBuild = (data) => {
+    let domString = '';
+    for (let i = 0; i < data.length; i++) {
+        domString += `<div>${Object.values(data[i])}</div>`;  
+    }
+    $("#main").html(domString)
+};
+
 const newPromise = () => {
     return new Promise((resolve, reject) => {
     $.get(' https://data.nashville.gov/resource/jrij-nn43.json')
@@ -25,6 +33,7 @@ const initialApiView = () => {
     newPromise().then(data => {
     console.log(data)
     cemetaryBuilder(data)
+    ultraBuild(data);
     })
     .catch(error => {
         console.error(error)
