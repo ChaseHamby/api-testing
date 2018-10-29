@@ -14,7 +14,7 @@ const ultraBuild = (data) => {
     for (let i = 0; i < data.length; i++) {
         domString += `<div>${Object.values(data[i])}</div>`;  
     }
-    $("#main").html(domString)
+    $("#main2").html(domString)
 };
 
 const newPromise = () => {
